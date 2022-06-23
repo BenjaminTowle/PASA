@@ -1,8 +1,17 @@
 # PASA
 
-This is the source code corresponding to the EMNLP 22 submission: Learn What Is \textit{Possible}, Then Choose What Is \textit{Best}: Disentangling One-To-Many Relations in Language Through Text-based Games.
+This is the source code corresponding to the EMNLP 22 submission: Learn What Is Possible, Then Choose What Is Best: Disentangling One-To-Many Relations in Language Through Text-based Games.
 
-First, you will want to download the ClubFloyd dataset from: https://github.com/princeton-nlp/calm-textgame/tree/master/calm.
+First, you will want to download the ClubFloyd dataset from: https://github.com/princeton-nlp/calm-textgame/tree/master/calm. The paper also makes use of the Jericho Walkthroughs, the preprocessed versions of which are included in this repo. The original repo for the Jericho framework can be found at: https://github.com/microsoft/jericho.
+
+The requirements for the code are:
+
+- transformers
+- pytorch
+- datasets
+- spacy
+- nltk
+- 
 
 The entry point for training the model is `train.py`. 
 
