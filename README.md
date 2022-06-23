@@ -11,7 +11,8 @@ The requirements for the code are:
 - datasets
 - spacy
 - nltk
-- 
+- scikit-learn
+- scipy
 
 The entry point for training the model is `train.py`. 
 
