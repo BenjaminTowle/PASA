@@ -28,6 +28,7 @@ motion = [
 import spacy
 from typing import List
 
+spacy.cli.download("en_core_web_sm")
 nlp = spacy.load("en_core_web_sm")
 
 def match_lists(list_a, list_b):
