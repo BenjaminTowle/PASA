@@ -207,12 +207,12 @@ class IntentModel(DistilBertPreTrainedModel):
             scores.append(logits)
             ce_loss += -1 * torch.log_softmax(logits, dim=-1)[0]
 
-            if self.intent_type == "regex":
+            if self.intent_type == "regex" and self.training:
                 intent_loss += -1 * torch.log(cls)[0, intents[i]]
 
             cum_idx += size
 
-        if self.intent_type == "latent":
+        if self.intent_type == "latent" and self.training:
             cls = torch.cat(all_cls, dim=0)
             b_pr = cls.mean(0, keepdim=True)
             prior = torch.ones([1, self.num_codes]).float().div(self.num_codes).to(device)
@@ -755,7 +755,13 @@ class Distillation(nn.Module):
         super().__init__()
         self.args = args
         self.student = BiEncoder.from_pretrained(args.student_path)
-        self.teacher = LatentModel.from_pretrained(args.teacher_path)
+
+        if args.intent_type == "regex":
+            self.teacher = IntentModel.from_pretrained(args.teacher_path)
+        elif args.intent_type == "latent":
+            self.teacher =  LatentModel.from_pretrained(args.teacher_path)
+        elif args.intent_type == "persona":
+            self.teacher =  PersonaModel.from_pretrained(args.teacher_path)
 
     def forward(self, input_ids, attention_mask, act_input_ids, act_attention_mask, act_sizes, **kwargs):
 
