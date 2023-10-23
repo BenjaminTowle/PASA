@@ -1,6 +1,8 @@
 # Learn What Is Possible, Then Choose What Is Best: Disentangling One-To-Many Relations in Language Through Text-based Games
+[![arXiv](https://img.shields.io/badge/arXiv-2304.07258-b31b1b.svg)](https://arxiv.org/abs/2304.07258)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository contains the source code for our EMNLP-FINDINGS 2022 paper [Learn What Is Possible, Then Choose What Is Best: Disentangling One-To-Many Relations in Language Through Text-based Games](https://aclanthology.org/2022.findings-emnlp.364/).
+The official code for the EMNLP-FINDINGS 2022 paper [Learn What Is Possible, Then Choose What Is Best: Disentangling One-To-Many Relations in Language Through Text-based Games](https://aclanthology.org/2022.findings-emnlp.364/).
 
 # Overview
 
